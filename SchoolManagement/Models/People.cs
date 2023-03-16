@@ -11,7 +11,5 @@ namespace SchoolManagement.Models
         public string Email { get; set; }
         public DateTime CreatedDate { get; set; }
         public DateTime UpdatedDate { get; set; }
-        public bool IsStudent { get; set; }
-        public bool IsProfessor { get; set; }
     }
 }

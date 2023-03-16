@@ -23,10 +23,9 @@ namespace SchoolManagement.Controllers
         // GET: Students
         public async Task<IActionResult> Index()
         {
-            var result = from ps in _context.ProfessorStudents
-                         join p in _context.People on ps.ProfessorId equals p.Id
-                         join s in _context.People on ps.StudentId equals s.Id
-                         join pc in _context.ProfessorClasses on ps.ProfessorId equals pc.ProfessorId
+            var result = from pc in _context.ProfessorClasses 
+                         join p in _context.People on pc.ProfessorId equals p.Id
+                         join s in _context.People on pc.StudentId equals s.Id
                          join sc in _context.Classes on pc.ClassId equals sc.Id
                          select new StudentListViewModel()
                          {
@@ -158,7 +157,7 @@ namespace SchoolManagement.Controllers
         {
             if (_context.People == null)
             {
-                return Problem("Entity set 'SchoolAppDbContext.People'  is null.");
+                return Problem("Entity set 'SchoolApp_context.People'  is null.");
             }
             var people = await _context.People.FindAsync(id);
             if (people != null)

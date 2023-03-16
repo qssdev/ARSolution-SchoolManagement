@@ -16,14 +16,10 @@ namespace SchoolManagement.Data
             base.OnModelCreating(modelBuilder);
 
             modelBuilder.Seed();
-
-            
         }
 
         public DbSet<People> People { get; set; }
         public DbSet<SubjectClass> Classes { get; set; }
         public DbSet<ProfessorClass> ProfessorClasses { get; set; }
-        public DbSet<ProfessorStudent> ProfessorStudents { get; set; }
-
     }
 }

@@ -9,7 +9,7 @@
 <p>
     <a asp-action="Create">Create New</a>
 </p>
-<table class="table">
+<table class="table table">
     <thead>
         <tr>
             <th>
@@ -32,19 +32,19 @@
     <tbody>
 @foreach (var item in Model) {
         <tr>
-            <td>
+            <td scope="col">
                     @Html.DisplayFor(modelItem => item.StudentName)
             </td>
-            <td>
+            <td scope="col">
                     @Html.DisplayFor(modelItem => item.StudentEmail)
             </td>
-            <td>
+            <td scope="col">
                     @Html.DisplayFor(modelItem => item.ProfessorName)
             </td>
-            <td>
+            <td scope="col">
                     @Html.DisplayFor(modelItem => item.ProfessorEmail)
             </td>
-            <td>
+            <td scope="col">
                     @Html.DisplayFor(modelItem => item.ClassName)
             </td>
         </tr>
